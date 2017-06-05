@@ -27,17 +27,16 @@ public class TodoDao {
 		this.jdbc = new NamedParameterJdbcTemplate(dataSource);
 		this.insertAction = new SimpleJdbcInsert(dataSource)
 				.withTableName("todo")
-				.usingColumns("todo")
+				.usingColumns("todo") // todo칼럼만 입력, 나머지 칼럼은 DB에 정의된 default값으로 입력	 
 				.usingGeneratedKeyColumns("id");
 			
 	}
-	
+	// 0. TodoDaoTest 메서드
 	public Todo selectById(Integer id) {
 		Map<String, Object> params = new HashMap<>();
 		params.put("id", id);
 		return jdbc.queryForObject(TodoSqls.SELECT_BY_ID, params, rowMapper);
 	}
-	
 	
 	// 1. 할 일 등록하기
 	public Integer insert(Todo todo) {

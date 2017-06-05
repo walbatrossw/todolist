@@ -2,7 +2,11 @@ package kr.or.connect.todo.persistence;
 
 public class TodoSqls {
 	
+	// 0. TodoDaoTest용 쿼리
 	static final String SELECT_BY_ID = "SELECT id, todo, completed, date FROM todo WHERE id = :id";
+	
+	// 1. 할 일 등록하기
+	// simpleJdbcInsert를 통해 구현
 	
 	// 2. 할 일 리스트
 	static final String SELECT_ALL = "SELECT id, todo, completed, date FROM todo ORDER BY id DESC";

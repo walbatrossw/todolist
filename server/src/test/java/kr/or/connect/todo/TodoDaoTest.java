@@ -76,7 +76,7 @@ public class TodoDaoTest {
 		assertThat(updated.getCompleted(), is(1));
 	}
 	
-	// 4. 할 일 삭제하기 (x button click)
+	// 4. 할 일 삭제하기 테스트
 	@Test
 	public void shouldDelete() {
 		// given
@@ -91,7 +91,7 @@ public class TodoDaoTest {
 		assertThat(affected, is(1));
 	}
 	
-	// 5. 할 일 전체 갯수 표시
+	// 5. 할 일 전체 갯수 표시 테스트
 	@Test
 	public void shouldActiveCount() {
 		// given
@@ -109,7 +109,7 @@ public class TodoDaoTest {
 	}
 	
 	
-	// 6-1. 할 일 리스트 필터링 (active click)
+	// 6-1. 할 일 리스트 필터링 테스트 - active
 	@Test
 	public void shouldSelectActive() {
 		// given
@@ -126,7 +126,7 @@ public class TodoDaoTest {
 		assertThat(activeTodos, is(notNullValue()));
 	}
 	
-	// 6-2. 할 일 리스트 필터링 (completed click)
+	// 6-2. 할 일 리스트 필터링 테스트 - completed
 	@Test
 	public void shouldSelectCompleted() {
 		// given
@@ -146,7 +146,7 @@ public class TodoDaoTest {
 		assertThat(completedTodos, is(notNullValue()));
 	}
 	
-	// 7. 완료한 일 삭제 (clear completed click)
+	// 7. 완료한 일 삭제 테스트
 	@Test
 	public void shouldDeleteCompleted() {
 		// given
